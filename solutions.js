@@ -82,4 +82,349 @@ const rps = (p1, p2) => {
   };
 
 
+/*
+Write a function that accepts two arguments and returns the remainder after dividing the larger number by the smaller number. Division by zero should return NaN (in C#, throw a new DivideByZeroException instead). Arguments will both be integers.
+*/
+
+  function remainder(a, b){
+    // Divide the larger argument by the smaller argument and return the remainder
+    if(a>b){
+      return a%b
+    }
+    else{
+      return b%a
+    }
+  }
+
+
+  /*Return the type of the sum of the two arguments
+  */
+  function typeOfSum(a, b) {
+    let sum = a+b
+    return typeof sum
+  } 
+
+
+  /*For this problem you must create a program that says who ate the last cookie. If the input is a string then "Zach" ate the cookie. If the input is a float or an int then "Monica" ate the cookie. If the input is anything else "the dog" ate the cookie. The way to return the statement is: "Who ate the last cookie? It was (name)!"
+
+Ex: Input = "hi" --> Output = "Who ate the last cookie? It was Zach! (The reason you return Zach is because the input is a string)
+
+Note: Make sure you return the correct message with correct spaces and punctuation.
+   */
+
+function cookie(x){
+    // ...
+    if(typeof x === "string"){
+      return `Who ate the last cookie? It was Zach!`
+    }
+    else if(typeof x==="number"){
+      return `Who ate the last cookie? It was Monica!`
+    }
+    else return `Who ate the last cookie? It was the dog!`
+  }
+
+
+  /*In this kata you will create a function that takes in a list and returns a list with the reverse order.
+ */
+
+  function reverseList(list) {
+    return list.reverse()
+  }
+
+
+  /**I've written five function equal1,equal2,equal3,equal4,equal5, defines six global variables v1 v2 v3 v4 v5 v6, every function has two local variables a,b, please set the appropriate value for the two variables(select from v1--v6), making these function return value equal to 100. the function equal1 is completed, please refer to this example to complete the following functions.
+   * 
+   */
+
+   var v1=50;v2=100,v3=150,v4=200,v5=2,v6=250
+   function equal1(){
+     var a=v1   
+     var b=v1   
+     return a+b;
+   }
+   //Please refer to the example above to complete the following functions
+   function equal2(){
+     var a= v3  //set number value to a
+     var b= v1  //set number value to b
+     return a-b;
+   }
+   function equal3(){
+     var a= v5   //set number value to a
+     var b= v1  //set number value to b
+     return a*b;
+   }
+   function equal4(){
+     var a= v4   //set number value to a
+     var b= v5  //set number value to b
+     return a/b;
+   }
+   function equal5(){
+     var a= v6  //set number value to a
+     var b= v3  //set number value to b
+     return a%b;
+   }
+
+   /**Complete the function which returns the weekday according to the input number:
+
+1 returns "Sunday"
+2 returns "Monday"
+3 returns "Tuesday"
+4 returns "Wednesday"
+5 returns "Thursday"
+6 returns "Friday"
+7 returns "Saturday"
+Otherwise returns "Wrong, please enter a number between 1 and 7"
+ */
+
+function whatday(num) { 
+ 
+    if(num === 1){
+      return "Sunday"
+    }
+    else if(num === 2){
+      return "Monday"
+    }
+    else if(num === 3){
+      return "Tuesday"
+    }
+    else if (num === 4){
+      return "Wednesday"
+    }
+    else if (num === 5){
+      return "Thursday"
+    }
+    else if (num === 6){
+      return "Friday"
+    }
+    else if (num === 7){
+      return "Saturday"
+    }
+    else{
+      return "Wrong, please enter a number between 1 and 7"
+    }
+  }
+
+
+  /**To find the volume (centimeters cubed) of a cuboid you use the formula:
+
+volume = Length * Width * Height
+
+But someone forgot to use proper record keeping, so we only have the volume, and the length of a single side!
+
+It's up to you to find out whether the cuboid has equal sides (= is a cube).
+
+Return true if the cuboid could have equal sides, return false otherwise.
+
+Return false for invalid numbers too (e.g volume or side is less than or equal to 0).
+
+Note: the sides must be integers
+ */
+
+var cubeChecker = function(volume, side){
+    return (volume === (side * side * side) && (volume > 0)) ? true : false;
+   };
+
+
+  /**Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result.
+
+It should remove all values from list a, which are present in list b.
+
+arrayDiff([1,2],[1]) == [2]
+If a value is present in b, all of its occurrences must be removed from the other:
+
+arrayDiff([1,2,2,2,3],[2]) == [1,3]
+ */ 
+
+function arrayDiff(a, b) {
+    return a.filter(val => !b.includes(val))
+}
+
+
+/**Write function isPalindrome that checks if a given string (case insensitive) is a palindrome.
+
+In Racket, the function is called palindrome?
+
+(palindrome? "nope") ; returns #f
+(palindrome? "Yay")  ; returns #t
+ */
+
+function isPalindrome(x) {
+    return x.toLowerCase() === x.split('').reverse().join('').toLowerCase()
+    
+  }
+
+
+  /**You are given two interior angles (in degrees) of a triangle.
+
+Write a function to return the 3rd.
+
+Note: only positive integers will be tested.
+ */
+
+function otherAngle(a, b) {
+    return 180-a-b;
+}
+
+
+/**Alex just got a new hula hoop, he loves it but feels discouraged because his little brother is better than him
+
+Write a program where Alex can input (n) how many times the hoop goes round and it will return him an encouraging message :)
+
+-If Alex gets 10 or more hoops, return the string "Great, now move on to tricks".
+
+-If he doesn't get 10 hoops, return the string "Keep at it until you get it".
+ */
+
+function hoopCount (n) {
+    if (n >= 10) {
+      return  "Great, now move on to tricks"
+    }   
+    else return "Keep at it until you get it"
+ }
+
+
+/**In this kata you need to check the provided array (x) for good ideas 'good' and bad ideas 'bad'. If there are one or two good ideas, return 'Publish!', if there are more than 2 return 'I smell a series!'. If there are no good ideas, as is often the case, return 'Fail!'.
+ */
+
+ function well(x){
+    goodCount = 0
   
+    for (let i=0; i<x.length; i++){
+      if(x[i] === "good"){
+        goodCount++
+      }
+    }
+    if(goodCount === 0){
+      return "Fail!"
+    }
+    else if(goodCount <=2){
+      return "Publish!"
+    }
+    else return "I smell a series!"
+  }
+
+  /**Complete the function, which calculates how much you need to tip based on the total amount of the bill and the service.
+
+You need to consider the following ratings:
+
+Terrible: tip 0%
+Poor: tip 5%
+Good: tip 10%
+Great: tip 15%
+Excellent: tip 20%
+The rating is case insensitive (so "great" = "GREAT"). If an unrecognised rating is received, then you need to return:
+
+"Rating not recognised" in Javascript, Python and Ruby...
+...or null in Java
+...or -1 in C#
+Because you're a nice person, you always round up the tip, regardless of the service.
+ */
+
+function calculateTip(amount, rating) {
+    let rate = rating.toLowerCase()
+    if(rate === "terrible"){
+      return 0
+    }
+    else if(rate === "poor"){
+      return Math.ceil(amount * 0.05)
+    }
+    else if (rate === "good") {
+      return Math.ceil(amount * 0.1)
+    }
+    else if(rate === "great"){
+      return Math.ceil(amount * 0.15)
+    }
+      else if (rate === "excellent"){
+      return Math.ceil(amount * 0.2)
+    }
+     else return "Rating not recognised"
+   
+}
+
+/**
+ * Task:
+Your task is to write a function which returns the sum of following series upto nth term(parameter).
+
+Series: 1 + 1/4 + 1/7 + 1/10 + 1/13 + 1/16 +...
+Rules:
+You need to round the answer to 2 decimal places and return it as String.
+
+If the given value is 0 then it should return 0.00
+
+You will only be given Natural Numbers as arguments.
+ */
+
+
+function SeriesSum(n)
+{
+    let result = 0;
+    let x = 1;
+    for (let i = 0; i < n; i += 1) {
+        if (i === 0) {
+            result = 1;
+        } else {
+            x += 3;
+            result = result + (1 / x);
+        }
+    }
+        return result.toFixed(2);
+}
+
+
+/**Triple Trouble
+Create a function that will return a string that combines all of the letters of the three inputed strings in groups. Taking the first letter of all of the inputs and grouping them next to each other. Do this for every letter, see example below!
+
+E.g. Input: "aa", "bb" , "cc" => Output: "abcabc"
+
+Note: You can expect all of the inputs to be the same length. */
+
+function tripleTrouble(one, two, three){
+ 
+    let result = ""
+    one = one.split("")
+    two = two.split("")
+    three = three.split("")
+    for(let i = 0; i< one.length; i++){
+      result = result + one[i]+two[i]+three[i]
+    }
+  return result
+  }
+
+  /**Numbers ending with zeros are boring.
+
+They might be fun in your world, but not here.
+
+Get rid of them. Only the ending ones. */
+
+function noBoringZeros(n) {
+    // your code
+    let result;
+    while(n%10===0 && n!== 0){
+      n = n/10
+    }
+    return n
+  }
+
+
+/**Your task is to find the first element of an array that is not consecutive.
+
+By not consecutive we mean not exactly 1 larger than the previous element of the array.
+
+E.g. If we have an array [1,2,3,4,6,7,8] then 1 then 2 then 3 then 4 are all consecutive but 6 is not, so that's the first non-consecutive number.
+
+If the whole array is consecutive then return null2.
+
+The array will always have at least 2 elements1 and all elements will be numbers. The numbers will also all be unique and in ascending order. The numbers could be positive or negative and the first non-consecutive could be either too!
+ */
+
+  function firstNonConsecutive (arr) {
+    for (let i=1; i < arr.length; i++){
+      if(arr[i-1]+1 !== arr[i]){
+        return arr[i]
+      }
+    }
+      return null
+    }
+
+
+    
