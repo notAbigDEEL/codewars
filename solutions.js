@@ -452,4 +452,145 @@ XO("zzoo") => false
        }
             return countX === countO
        }
-       
+
+       /**Instructions
+Write a function that takes a single string (word) as argument. The function must return an ordered list containing the indexes of all capital letters in the string.
+
+Example
+Test.assertSimilar( capitals('CodEWaRs'), [0,3,4,6] );
+ */
+
+
+       var capitals = function (word) {
+
+        let arr = []
+        for(let i = 0; i<word.length; i++){
+          if(word[i] === word[i].toUpperCase()){
+            arr.push(i)
+          }
+        }
+        return arr
+      };
+
+
+/**An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+
+isIsogram("Dermatoglyphics") == true
+isIsogram("aba") == false
+isIsogram("moOse") == false // -- ignore letter case
+ */
+
+      function isIsogram(str){
+        str = str.toLowerCase()
+        for(let i=0; i<str.length; i++){
+          for(let j = i+1; j<str.length; j++){
+            if(str[i] === str[j]){
+              return false
+            }
+          }
+        }
+        return true
+      }
+      
+
+/**JavaScript Arrays support a filter function (starting in JavaScript 1.6). Use the filter functionality to complete the function given.
+
+The solution would work like the following:
+
+getEvenNumbers([2,4,5,6]) // should == [2,4,6]
+ */
+
+function getEvenNumbers(numbersArray){
+    // filter out the odd numbers
+    return numbersArray.filter((num)=> num%2 === 0)
+  }
+
+
+  /*Finish the uefaEuro2016() function so it return string just like in the examples below:
+
+uefaEuro2016(['Germany', 'Ukraine'],[2, 0]) // "At match Germany - Ukraine, Germany won!"
+uefaEuro2016(['Belgium', 'Italy'],[0, 2]) // "At match Belgium - Italy, Italy won!"
+uefaEuro2016(['Portugal', 'Iceland'],[1, 1]) // "At match Portugal - Iceland, teams played draw."
+   */
+
+  function uefaEuro2016(teams, scores){
+    if(scores[0] > scores[1]){
+      return `At match ${teams[0]} - ${teams[1]}, ${teams[0]} won!`
+    }
+     else if(scores[1]>scores[0]){
+       return `At match ${teams[0]} - ${teams[1]}, ${teams[1]} won!`
+     }
+     else return `At match ${teams[0]} - ${teams[1]}, teams played draw.`
+   
+   }
+
+/*
+Kids drink toddy.
+Teens drink coke.
+Young adults drink beer.
+Adults drink whisky.
+Make a function that receive age, and return what they drink.
+
+Rules:
+
+Children under 14 old.
+Teens under 18 old.
+Young under 21 old.
+Adults have 21 or more.
+Examples:
+
+peopleWithAgeDrink(13) === "drink toddy"
+peopleWithAgeDrink(17) === "drink coke"
+peopleWithAgeDrink(18) === "drink beer"
+peopleWithAgeDrink(20) === "drink beer"
+peopleWithAgeDrink(30) === "drink whisky"
+ */
+
+
+   function peopleWithAgeDrink(old) {
+    if(old<14){
+      return "drink toddy"
+    }
+    else if(old<18){
+      return "drink coke"
+    }
+    else if(old<21)
+    {
+      return "drink beer"
+    }
+    else{
+      return "drink whisky"
+    }
+  };
+
+
+  /*Create a function that converts US dollars (USD) to Chinese Yuan (CNY) . The input is the amount of USD as an integer, and the output should be a string that states the amount of Yuan followed by 'Chinese Yuan'
+
+For Example:
+
+  usdcny(15) // => '101.25 Chinese Yuan'
+  usdcny(465) // => '3138.75 Chinese Yuan'
+The conversion rate you should use is 6.75 CNY for every 1 USD. All numbers shold be rounded to the nearest hundredth (e.g. 21.00 NOT 21.0 or 21) (HINT: google toFixed)
+   */
+
+function usdcny(usd) {
+    let result = usd * 6.75
+    return `${result.toFixed(2)} Chinese Yuan`
+  }
+
+
+/*Task:
+A magician in the subway showed you a trick, he put an ice brick in a bottle to impress you.The bricks width and height are equal, forming a square. Just for fun and also to impress the magician and people around, you decided to calculate the brick's volume. Write a function iceBrickVolume that will except these parameters:
+
+radius - bottle's radius (always > 0);
+bottleLength - total bottle length (always > 0);
+rimLength - length from bottle top to brick (always < bottleLength);
+And return volume of ice brick that magician managed to put into a bottle.
+ */
+
+  function iceBrickVolume(radius, bottleLength, rimLength) {
+    // Your code should be here ;)
+    return (2*radius**2) *(bottleLength - rimLength)
+  }
+
+  
