@@ -619,4 +619,114 @@ The exponent will never be 1, and neither number will ever be 0
   }
 
 
+/*Inspired by the development team at Vooza, write the function howManyLightsabersDoYouOwn/how_many_light_sabers_do_you_own that
 
+accepts the name of a programmer, and
+returns the number of lightsabers owned by that person.
+The only person who owns lightsabers is Zach, by the way. He owns 18, which is an awesome number of lightsabers. Anyone else owns 0.
+
+Note: your function should have a default parameter.
+
+howManyLightsabersDoYouOwn("anyone else") === 0
+howManyLightsabersDoYouOwn("Zach") === 18
+howManyLightsabersDoYouOwn() === 0
+ */
+
+  function howManyLightsabersDoYouOwn(name) {
+    if(name==="Zach"){
+      return 18
+    }
+    else{
+      return 0
+    }
+  }
+
+
+/*Simple challenge - eliminate all bugs from the supplied code so that the code runs and outputs the expected value. Output should be the length of the longest word, as a number.
+
+There will only be one 'longest' word.
+*/
+
+  function findLongest(str){ 
+  
+    let spl = str.split(" ");
+    let longest = 0
+    
+    for (let i = 0; i < spl.length; i++) {
+      if (spl[i].length > longest) {
+        longest = spl[i].length
+      }
+      }
+      return longest
+  }
+
+/*Complete the function that takes two integers (a, b, where a < b) and return an array of all integers between the input parameters, including them.
+
+For example:
+
+a = 1
+b = 4
+--> [1, 2, 3, 4]
+ */
+
+  function between(a, b) {
+    const arr=[]
+     for (let i=a; i<=b; i++){
+       arr.push(i) 
+     }
+     return arr
+   }
+   
+
+   /*Create a function named divisors/Divisors that takes an integer n > 1 and returns an array with all of the integer's divisors(except for 1 and the number itself), from smallest to largest. If the number is prime return the string '(integer) is prime' (null in C#) (use Either String a in Haskell and Result<Vec<u32>, String> in Rust).
+
+Example:
+divisors(12); // should return [2,3,4,6]
+divisors(25); // should return [5]
+divisors(13); // should return "13 is prime"
+    */
+
+function divisors(integer) {
+  
+    let arr = [];
+    for (var i=2;i<integer;i++){
+     if (integer % i === 0){
+      arr.push(i);
+           }
+    } if (arr.length === 0) {
+           return `${integer} is prime`;
+       } else {
+           return arr;
+       }
+     
+   }
+
+
+/*An anagram is the result of rearranging the letters of a word to produce a new word (see wikipedia).
+
+Note: anagrams are case insensitive
+
+Complete the function to return true if the two arguments given are anagrams of each other; return false otherwise.
+
+Examples
+"foefet" is an anagram of "toffee"
+
+"Buckethead" is an anagram of "DeathCubeK"
+ */
+   // write the function isAnagram
+var isAnagram = function(test, original) {
+  
+    const a = test.toLowerCase().split("").sort().join("")
+    const b = original.toLowerCase().split("").sort().join("")
+    
+    if(b===a ){
+      return true
+    }
+    else{return false}
+  };
+  
+
+
+
+
+  
