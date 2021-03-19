@@ -750,4 +750,121 @@ function NameMe(first, last) {
 }
 
 
-  
+  /*Given two integers a and b, which can be positive or negative, find the sum of all the integers between including them too and return it. If the two numbers are equal return a or b.
+
+Note: a and b are not ordered!
+
+Examples
+GetSum(1, 0) == 1   // 1 + 0 = 1
+GetSum(1, 2) == 3   // 1 + 2 = 3
+GetSum(0, 1) == 1   // 0 + 1 = 1
+GetSum(1, 1) == 1   // 1 Since both are same
+GetSum(-1, 0) == -1 // -1 + 0 = -1
+GetSum(-1, 2) == 2  // -1 + 0 + 1 + 2 = 2
+ */
+
+function getSum( a,b )
+{
+   let sum = 0
+   if(a===b){
+     return a
+   }
+   else if(a<b){
+    for(let i = a; i<=b; i++){
+      sum+=i
+    }
+  }
+    else if (a>b){
+      for(let i=b ; i<=a; i++){
+        sum+=i
+      }
+    }
+  return sum
+}
+
+/*Description:
+
+We want to generate a function that computes the series starting from 0 and ending until the given number.
+
+Example:
+Input:
+
+> 6
+Output:
+
+0+1+2+3+4+5+6 = 21
+
+Input:
+
+> -15
+Output:
+
+-15<0
+
+Input:
+
+> 0
+Output:
+
+0=0
+ */
+
+
+var SequenceSum = (function() {
+  function SequenceSum() {}
+
+  SequenceSum.showSequence = function(count) {
+    let arr=[];
+    for(let i=0;i<=count;i++) {
+      arr.push(i)
+    };
+    let b=arr.reduce((total,next)=>total+next,0)
+    let a=arr.join('+');
+    
+    if(count<0) return `${count}<0`;
+    if(count==0) return `${count}=0`;
+    
+    return `${a} = ${b}`
+  };
+
+  return SequenceSum;
+
+})();
+
+
+/**
+ * Find the total sum of internal angles (in degrees) in an n-sided simple polygon. N will be greater than 2.
+ */
+
+ function angle(n) {
+  return (n-2)*180
+}
+
+
+/*Deoxyribonucleic acid, DNA is the primary information storage molecule in biological systems. It is composed of four nucleic acid bases Guanine ('G'), Cytosine ('C'), Adenine ('A'), and Thymine ('T').
+
+Ribonucleic acid, RNA, is the primary messenger molecule in cells. RNA differs slightly from DNA its chemical structure and contains no Thymine. In RNA Thymine is replaced by another nucleic acid Uracil ('U').
+
+Create a function which translates a given DNA string into RNA.
+
+For example:
+
+"GCAT"  =>  "GCAU"
+The input string can be of arbitrary length - in particular, it may be empty. All input is guaranteed to be valid, i.e. each input string will only ever consist of 'G', 'C', 'A' and/or 'T'.
+ */
+
+
+function DNAtoRNA(dna) {
+  // create a function which returns an RNA sequence from the given DNA sequence
+  let rna = ""
+  for(let i = 0; i<dna.length; i++){
+    if(dna[i] === "T"){
+      rna += "U"
+    }
+    else{
+    rna += dna[i]
+    }
+  }
+  return rna
+}
+
