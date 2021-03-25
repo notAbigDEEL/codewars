@@ -919,10 +919,3 @@ function isPalindrome(line) {
   return q==line;
 }
 
-
-
-
-
-
-
-
