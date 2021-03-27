@@ -923,9 +923,3 @@ function isPalindrome(line) {
 
 
 
-
-
-
-
-
-
