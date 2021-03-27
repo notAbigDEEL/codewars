@@ -921,5 +921,82 @@ function isPalindrome(line) {
 
 
 
+/*This function should test if the factor is a factor of base.
+
+Return true if it is a factor or false if it is not.
+
+About factors
+Factors are numbers you can multiply together to get another number.
+
+2 and 3 are factors of 6 because: 2 * 3 = 6
+
+You can find a factor by dividing numbers. If the remainder is 0 then the number is a factor.
+You can use the mod operator (%) in most languages to check for a remainder
+For example 2 is not a factor of 7 because: 7 % 2 = 1
+
+Note: base is a non-negative number, factor is a positive number.
+ */
+
+function checkForFactor (base, factor) {
+  // code here
+  if(base%factor === 0){
+    return true
+  }
+  return false
+}
+
+/*Complete the function that calculates the area of the red square, when the length of the circular arc A is given as the input. Return the result rounded to two decimals.
+
+Graph
+
+Note: use the π value provided in your language (Math::PI, M_PI, math.pi, etc)
+ */
 
 
+function squareArea(A){
+  const radius = (2*A)/Math.PI
+  const area = radius*radius
+  return Number(area.toFixed(2))
+  }
+
+
+/*I would like to be able to pass an array with two elements to my swapValues function to swap the values. However it appears that the values aren't changing.
+
+Can you figure out what's wrong here?
+ */
+  function swapValues(args) {
+    var temp = args[0];
+    args[0] = args[1];
+    args[1] = temp;
+  
+  }
+
+/* Create a combat function that takes the player's current health and the amount of damage recieved, and returns the player's new health. Health can't be less than 0.
+*/
+
+  function combat(health, damage) {
+    // Write your code here
+    return health < damage ? 0 : health-damage
+  }
+
+
+  /*Given a string of arbitrary length with any ascii characters. Write a function to determine whether the string contains the whole word "English".
+
+The order of characters is important -- a string "abcEnglishdef" is correct but "abcnEglishsef" is not correct.
+
+Upper or lower case letter does not matter -- "eNglisH" is also correct.
+
+Return value as boolean values, true for the string to contains "English", false for it does not.
+  */
+
+  function spEng(sentence){
+    //write your code here
+      if (sentence.toLowerCase().indexOf("english") === -1){
+        return false
+      }
+      else{
+        return true
+      }
+    }
+
+    
