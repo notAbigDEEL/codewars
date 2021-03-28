@@ -1018,3 +1018,117 @@ Results are automatically rounded to the nearest integer by the test cases.
     function dBScale(intensity) {
       return 10*Math.log10(intensity/Math.pow(10,-12))
      }
+
+
+    /*Sentence Smash
+Write a function that takes an array of words and smashes them together into a sentence and returns the sentence. You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word. Be careful, there shouldn't be a space at the beginning or the end of the sentence!
+
+Example
+['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'
+     */
+
+     function smash (words) {
+      "use strict";
+      return words.join(" ")
+      
+  };
+
+/* Implement a method that accepts 3 integer values a, b, c. The method should return true if a triangle can be built with the sides of given length and false in any other case.
+
+(In this case, all triangles must have surface greater than 0 to be accepted).
+ */
+
+  function isTriangle(a,b,c)
+{
+   if(a<=0 || b <= 0 || c <=0){
+     return false
+   }
+  else if (a+b>c && b+c > a && a+c>b){
+    return true
+  }
+  else
+    return false
+}
+
+/*The Western Suburbs Croquet Club has two categories of membership, Senior and Open. They would like your help with an application form that will tell prospective members which category they will be placed.
+
+To be a senior, a member must be at least 55 years old and have a handicap greater than 7. In this croquet club, handicaps range from -2 to +26; the better the player the lower the handicap.
+
+Input
+Input will consist of a list of lists containing two items each. Each list contains information for a single potential member. Information consists of an integer for the person's age and an integer for the person's handicap.
+
+Note for F#: The input will be of (int list list) which is a List<List>
+
+Example Input
+[[18, 20],[45, 2],[61, 12],[37, 6],[21, 21],[78, 9]]
+Output
+Output will consist of a list of string values (in Haskell: Open or Senior) stating whether the respective member is to be placed in the senior or open category.
+
+Example Output
+["Open", "Open", "Senior", "Open", "Open", "Senior"]
+*/
+
+function openOrSenior(data){
+  const result = []
+  for(let i = 0; i<data.length; i++){
+    if(data[i][0] >= 55 && data[i][1]>7){
+      result.push("Senior")
+    }
+    else{
+      result.push("Open")
+    }
+  }
+  return result
+}
+
+
+/*Code as fast as you can! You need to double the integer and return it.
+*/
+
+function doubleInteger(i) {
+  // i will be an integer. Double it and return it.
+  return 2*i;
+}
+
+
+
+/*Write a function that takes a list (in Python) or array (in other languages) of numbers, and makes a copy of it.
+
+Note that you may have troubles if you do not return an actual copy, item by item, just a pointer or an alias for an existing list or array.
+
+If not a list or array is given as a parameter in interpreted languages, the function should raise an error.
+
+Examples:
+
+t = [1, 2, 3, 4]
+tCopy = copyList(t)
+t[1] += 5
+t = [1, 7, 3, 4]
+tCopy = [1, 2, 3, 4]
+*/
+
+function copyList(l){
+  const result = l.map(x=>x)
+  return result
+}
+
+/*Given a non-negative integer, return an array / a list of the individual digits in order.
+
+Examples:
+
+123 => [1,2,3]
+
+1 => [1]
+
+8675309 => [8,6,7,5,3,0,9]
+ */
+
+
+function digitize(n) {
+  return n.toString().split('').map(Number);
+}
+
+
+
+
+
