@@ -1187,4 +1187,59 @@ function twoSort(s) {
 
 }
 
+/*Write a function named repeater() that takes two arguments (a string and a number), and returns a new string where the input string is repeated that many times.
+
+Example:
+Repeater.repeat("a", 5)
+should return
+
+"aaaaa"
+*/
+
+function repeater(string, n){
+  let str = ""
+ while(n>0){
+   str+=string
+   n--
+ }
+  return str
+}
+
+
+/*The wide mouth frog is particularly interested in the eating habits of other creatures.
+
+He just can't stop asking the creatures he encounters what they like to eat. But then he meet the alligator who just LOVES to eat wide-mouthed frogs!
+
+When he meets the alligator, it then makes a tiny mouth.
+
+Your goal in this kata is to create complete the mouth_size method this method take one argument animal which corresponds to the animal encountered by frog. If this one is an alligator (case insensitive) return small otherwise return wide.
+ */
+
+function mouthSize(animal) {
+  // code here
+  if(animal.toLowerCase() === "alligator"){
+    return "small"
+  }
+  else{
+    return "wide"
+  }
+}
+
+
+
+/*Sometimes, I want to quickly be able to convert miles per imperial gallon into kilometers per liter.
+
+Create an application that will display the number of kilometers per liter (output) based on the number of miles per imperial gallon (input).
+
+Make sure to round off the result to two decimal points. If the answer ends with a 0, it should be rounded off without the 0. So instead of 5.50, we should get 5.5.
+
+Some useful associations relevant to this kata: 1 Imperial Gallon = 4.54609188 litres 1 Mile = 1.609344 kilometres
+ */
+
+
+function converter (mpg) {
+  kmPerLiter = mpg/2.824810531496
+  return Number(kmPerLiter.toFixed(2))
+}
+
 
