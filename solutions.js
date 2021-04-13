@@ -1499,3 +1499,87 @@ function longest(s1, s2) {
 }
 
 
+/*Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+
+Examples:
+
+solution('abc', 'bc') // returns true
+solution('abc', 'd') // returns false
+
+ */
+
+
+function solution(str, ending){
+  return ending === str.substr(str.length - ending.length);
+
+}
+
+
+/* Kata Task
+
+I have a cat and a dog.
+
+I got them at the same time as kitten/puppy. That was humanYears years ago.
+
+Return their respective ages now as [humanYears,catYears,dogYears]
+
+NOTES:
+
+    humanYears >= 1
+    humanYears are whole numbers only
+
+Cat Years
+
+    15 cat years for first year
+    +9 cat years for second year
+    +4 cat years for each year after that
+
+Dog Years
+
+    15 dog years for first year
+    +9 dog years for second year
+    +5 dog years for each year after that
+
+References
+
+    http://www.catster.com/cats-101/calculate-cat-age-in-cat-years
+    http://www.slate.com/articles/news_and_politics/explainer/2009/05/a_dogs_life.html
+
+ */
+
+var humanYearsCatYearsDogYears = function(humanYears) {
+  // Your code here!
+  let result = []
+  
+  if(humanYears === 1){
+    return result = [humanYears,15,15]
+  }
+  else if (humanYears === 2){
+    return result = [humanYears,24,24]
+  }
+  else{
+    let catYears = 24 + ((humanYears - 2) * 4)
+    let dogYears = 24 +((humanYears - 2) * 5)
+
+    return result =[humanYears, catYears, dogYears]
+  }
+  
+}
+
+
+/*Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+ */
+
+function removeExclamationMarks(s) {
+  let str = []
+  for(let i=0 ; i<s.length;i++){
+    if (s[i] === "!"){
+      str.push("")
+    }
+    else{
+       str.push(s[i])
+    }
+  }
+  return str.join("")
+}
+
