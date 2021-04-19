@@ -1687,3 +1687,141 @@ function litres(time) {
   return Math.floor(time*0.5)
 }
 
+
+/* Write a function that returns the total surface area and volume of a box as an array: [area, volume]
+ */
+
+function getSize(width, height, depth){
+
+  let area = ((height*width) * 2) + ((width*depth)*2) + ((depth*height)*2)
+
+  const volume = width*height*depth
+
+  const arr=[area, volume]
+
+  return arr
+  
+ }
+
+
+ /*Create a function finalGrade, which calculates the final grade of a student depending on two parameters: a grade for the exam and a number of completed projects.
+
+This function should take two arguments: exam - grade for exam (from 0 to 100); projects - number of completed projects (from 0 and above);
+
+This function should return a number (final grade). There are four types of final grades:
+
+100, if a grade for the exam is more than 90 or if a number of completed projects more than 10.
+90, if a grade for the exam is more than 75 and if a number of completed projects is minimum 5.
+75, if a grade for the exam is more than 50 and if a number of completed projects is minimum 2.
+0, in other cases
+Examples(Inputs-->Output):
+
+100, 12 --> 100
+99, 0 --> 100
+10, 15 --> 100
+
+85, 5 --> 90
+
+55, 3 --> 75
+
+55, 0 --> 0
+20, 2 --> 0
+  */
+
+ function finalGrade (exam, projects) {
+  if(exam > 90 || projects > 10){
+    return 100
+  }
+  else if (exam > 75 && projects >= 5){
+    return 90
+  }
+  else if (exam > 50 && projects > 1){
+    return 75
+  }
+  else{
+    return 0
+  }
+}
+
+
+/* Bob is preparing to pass IQ test. The most frequent task in this test is to find out which one of the given numbers differs from the others. Bob observed that one number usually differs from the others in evenness. Help Bob — to check his answers, he needs a program that among the given numbers finds one that is different in evenness, and return a position of this number.
+
+! Keep in mind that your task is to help Bob solve a real IQ test, which means indexes of the elements start from 1 (not 0)
+
+Examples:
+iqTest("2 4 7 8 10") => 3 // Third number is odd, while the rest of the numbers are even
+
+iqTest("1 2 1 1") => 2 // Second number is even, while the rest of the numbers are odd
+ */
+
+function iqTest(numbers) {
+  numbers = numbers.split(" ").map(el=> {
+    return parseInt(el);
+  });
+
+  var odd = numbers.filter(el=> {
+    return el % 2 === 1;
+  });
+  var even = numbers.filter(el=> {
+    return el % 2 === 0;
+  });
+
+  return odd.length < even.length
+    ? numbers.indexOf(odd[0]) + 1
+    : numbers.indexOf(even[0]) + 1;
+}
+
+
+/*Write a function that takes a positive integer n, sums all the cubed values from 1 to n, and returns that sum.
+
+Assume that the input n will always be a positive integer.
+
+Examples:
+
+sumCubes(2) // 9
+// sum of the cubes of 1 and 2 is 1 + 8
+ */
+function sumCubes(n){
+ 
+  let sum = 0
+  for(let i = 1; i <=n; i++){
+    sum+= i**3
+  }
+  return sum
+}
+
+
+/*Classy Extensions
+Classy Extensions, this kata is mainly aimed at the new JS ES6 Update introducing extends keyword. You will be preloaded with the Animal class, so you should only edit the Cat class.
+Task
+Your task is to complete the Cat class which Extends Animal and replace the speak method to return the cats name + meows. e.g. 'Mr Whiskers meows.'
+The name attribute is passed with this.name (JS), @name (Ruby) or self.name (Python).
+ */
+class Cat extends Animal {
+  speak(){
+    return `${this.name} meows.`
+  }
+}
+
+
+/*This is a beginner friendly kata especially for UFC/MMA fans.
+
+It's a fight between the two legends: Conor McGregor vs George Saint Pierre in Madison Square Garden. Only one fighter will remain standing, and after the fight in an interview with Joe Rogan the winner will make his legendary statement. It's your job to return the right statement depending on the winner!
+
+If the winner is George Saint Pierre he will obviously say:
+
+"I am not impressed by your performance."
+If the winner is Conor McGregor he will most undoubtedly say:
+
+"I'd like to take this chance to apologize.. To absolutely NOBODY!"
+Good Luck!
+ */
+
+var quote = function(fighter) {
+  if (fighter.toLowerCase() === 'conor mcgregor' ){
+    return "I'd like to take this chance to apologize.. To absolutely NOBODY!"
+  }
+  else return "I am not impressed by your performance."
+
+};
+
