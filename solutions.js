@@ -1825,3 +1825,4 @@ var quote = function(fighter) {
 
 };
 
+
