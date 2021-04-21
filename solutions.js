@@ -1840,3 +1840,56 @@ function reverse(string){
   return string.split(' ').reverse().join(' ')
 }
 
+
+/* Write a function that returns a string in which firstname is swapped with last name.
+
+nameShuffler('john McClane'); => "McClane john"
+ */
+
+function nameShuffler(str){
+  let strArr = str.split(" ")
+  
+  return `${strArr[1]} ${strArr[0]}`
+}
+
+
+/* Create a function that takes a string and an integer (n).
+
+The function should return a string that repeats the input string n number of times.
+
+If anything other than a string is passed in you should return "Not a string"
+
+Example
+"Hi", 2 --> "HiHi"
+1234, 5 --> "Not a string"
+ */
+
+var repeatIt = function(str, n) {
+  if(typeof str === "string"){
+    return str.repeat(n)
+ }
+ else return "Not a string"
+}
+
+
+/* You're re-designing a blog and the blog's posts have the following format for showing the date and time a post was made:
+
+Weekday Month Day, time e.g., Friday May 2, 7pm
+
+You're running out of screen real estate, and on some pages you want to display a shorter format, Weekday Month Day that omits the time.
+
+Write a function, shortenToDate, that takes the Website date/time in its original string format, and returns the shortened format.
+
+Assume shortenToDate's input will always be a string, e.g. "Friday May 2, 7pm". Assume shortenToDate's output will be the shortened string, e.g., "Friday May 2".
+ */
+
+function shortenToDate(longDate) {
+  return longDate.split(',')[0]
+}
+
+
+
+function array(arr){
+  return arr.split(',').slice(1,-1).join(' ') || null
+ }
+ 
