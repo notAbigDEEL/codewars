@@ -1888,8 +1888,125 @@ function shortenToDate(longDate) {
 }
 
 
+/* This is a spin off of my first kata. You are given a list of character sequences as a comma separated string. Write a function which returns another string containing all the character sequences except the first and the last ones, separated by spaces. If the input string is empty, or the removal of the first and last items would cause the string to be empty, return a null value.
+ */
 
 function array(arr){
   return arr.split(',').slice(1,-1).join(' ') || null
  }
  
+
+
+ /*You get any card as an argument. Your task is to return a suit of this card.
+
+Our deck (is preloaded):
+
+deck = ['2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣','A♣',
+        '2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦','A♦',
+        '2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥','A♥',
+        '2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠','A♠'];
+('3♣') -> return 'clubs'
+('3♦') -> return 'diamonds'
+('3♥') -> return 'hearts'
+('3♠') -> return 'spades'
+  */
+
+ function defineSuit(card) {
+  if (card.includes('♣')){
+    return 'clubs'
+  }
+   else if (card.includes('♦')){
+     return 'diamonds'
+   }
+   else if (card.includes('♥')){
+     return 'hearts'
+   }
+   else return 'spades'
+ }
+
+
+ /* Template Strings
+Template Strings, this kata is mainly aimed at the new JS ES6 Update introducing Template Strings
+Task
+Your task is to return the correct string using the Template String Feature.
+Input
+Two Strings, no validation is needed.
+Output
+You must output a string containing the two strings with the word ```' are '```
+Reference: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/template_strings
+  */
+
+ var TempleStrings = function(obj, feature) {
+  return `${obj} are ${feature}`
+}
+
+
+/* Complete the function/method so that it returns the url with anything after the anchor (#) removed.
+
+Examples
+// returns 'www.codewars.com'
+removeUrlAnchor('www.codewars.com#about')
+
+// returns 'www.codewars.com?page=1' 
+removeUrlAnchor('www.codewars.com?page=1') 
+ */
+
+function removeUrlAnchor(url){
+  let index = url.indexOf("#")
+  
+  if (index === -1){
+    return url 
+  }
+  else return url.slice(0, index);
+}
+
+
+/* Write a method that takes one argument as name and then greets that name, capitalized and ends with an exclamation point.
+
+Example:
+
+"riley" --> "Hello Riley!"
+"JACK"  --> "Hello Jack!"
+ */
+
+var greet = function(name) {
+  const myStr = name.toLowerCase()
+  const newString = myStr[0].toUpperCase()+myStr.slice(1)
+  return `Hello ${newString}!`
+};
+
+/* Complete the function caffeineBuzz, which takes a non-zero integer as it's one argument.
+
+If the integer is divisible by 3, return the string "Java".
+
+If the integer is divisible by 3 and divisible by 4, return the string "Coffee"
+
+If the integer is one of the above and is even, add "Script" to the end of the string.
+
+Otherwise, return the string "mocha_missing!"
+
+caffeineBuzz(1)   => "mocha_missing!"
+caffeineBuzz(3)   => "Java"
+caffeineBuzz(6)   => "JavaScript"
+caffeineBuzz(12)  => "CoffeeScript"
+ */
+
+function caffeineBuzz(n){
+  if (n % 3 ===0 && n % 4 === 0 && n % 2 === 0){
+    return 'CoffeeScript'
+  }
+   else if(n % 3 === 0 && n % 2 === 0){
+     return 'JavaScript'
+   }
+   else if(n % 3 === 0 && n % 4 === 0){
+     return 'Coffee'
+   }
+   else if(n % 3 === 0){
+    return 'Java'
+  } else{
+    return 'mocha_missing!'
+  }
+  
+ }
+
+
