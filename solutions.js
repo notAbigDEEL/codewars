@@ -2047,3 +2047,164 @@ function rainAmount(mm){
        return "Your plant has had more than enough water for today!";
   }
 }
+
+
+/* An NBA game runs 48 minutes (Four 12 minute quarters). Players do not typically play the full game, subbing in and out as necessary. Your job is to extrapolate a player's points per game if they played the full 48 minutes.
+
+Write a function that takes two arguments, ppg (points per game) and mpg (minutes per game) and returns a straight extrapolation of ppg per 48 minutes rounded to the nearest tenth. Return 0 if 0.
+
+Examples:
+
+pointsPer48(12, 20) // 28.8
+pointsPer48(10, 10) // 48 
+pointsPer48(5, 17) // 14.1 
+pointsPer48(0, 0) // 0
+Notes:
+All inputs will be either be an integer or float.
+Follow your dreams!
+ */
+
+function pointsPer48(ppg, mpg) {
+
+  if( mpg === 0){
+     return 0
+   } 
+   else if(mpg < 48){
+   let result = ((ppg/mpg) * 48).toFixed(1)
+   return Number(result)
+ }
+   else{
+     return ppg
+   }
+ }
+
+
+ /* Task
+Coding in function pickIt, function accept 1 parameter:arr, it's a number array, we need traverse arr by using for loop, if element is odd number, push it to array odd, if it's a even number, push it to array even.
+
+I've defined two array odd and even in the function, and also wrote the return statement. your work is write a for loop.
+
+If you forgot how to push an element to array, please refer to lesson 4.
+  */
+
+ function pickIt(arr){
+  var odd=[],even=[];
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] % 2 === 0){
+      even.push(arr[i])
+    }
+    else{
+      odd.push(arr[i])
+    }
+  }
+  
+  
+  return [odd,even];
+}
+
+
+
+/*Task
+I've written five function, each function receives a parameter: arr(an array), you should code something with arr.
+
+    1. getLength(arr)    should return length of arr
+    2. getFirst(arr)     should return the first element of arr
+    3. getLast(arr)      should return the last element of arr
+    4. pushElement(arr)  should push an element to arr, and then return arr
+    5. popElement(arr)   should pop an element from arr, and then return arr
+When you have finished the work, click "Run Tests" to see if your code is working properly.
+
+In the end, click "Submit" to submit your code pass this kata.
+ */
+
+
+function getLength(arr){
+  //return length of arr
+  return arr.length
+}
+function getFirst(arr){
+  //return the first element of arr
+  return arr[0]
+}
+function getLast(arr){
+  //return the last element of arr
+  return arr[arr.length-1]
+}
+function pushElement(arr){
+  var el=1;
+  //push el to arr
+  arr.push(el)
+  
+  return arr
+}
+function popElement(arr){
+  //pop an element from arr
+   arr.pop()
+  return arr
+}
+
+
+/* Task
+misson 1: I've create three function, and defined some global variables, please select some variables that can make up the name of the function, and return them(Please note the uppercase and lowercase letters are different).
+
+When you have finished the work, click "Run Tests" to see if your code is working properly.
+
+misson 2: After misson 1 finished. you should click "Attempt" to see my three questions, and write the answer in function answer1, answer2,answer3
+
+If everything is right, click "Submit" again to submit your code pass this kata.
+ */
+
+
+var a1="A",a2="a",b1="B",b2="b",c1="C",c2="c",d1="D",d2="d",e1="E",e2="e",n1="N",n2="n"
+function Dad(){
+  //select some variable to combine "Dad"
+  return d1+a2+d2;
+}
+function Bee(){
+  //select some variable to combine "Bee"
+  return b1+e2+e2;
+}
+function banana(){
+  //select some variable to combine "banana"
+  return b2+a2+n2+a2+n2+a2;
+}
+
+//answer some questions if you finished works above
+function answer1(){
+  //the answer should be "yes" or "no"
+  return "no";
+}
+function answer2(){
+  //the answer should be "yes" or "no"
+  return "no";
+}
+function answer3(){
+  //the answer should be "yes" or "no"
+  return "yes";
+}
+
+
+/* Task
+Give you a function animal, accept 1 parameter:obj like this:
+
+{name:"dog",legs:4,color:"white"}
+and return a string like this:
+
+"This white dog has 4 legs."
+ */
+
+function animal(obj){
+  return `This ${obj.color} ${obj.name} has ${obj.legs} legs.`
+}
+
+
+
+/* Task
+Coding in function trueOrFalse, function accept 1 parameters:val, try to use the conditional statement if...else, if val value is false (val==false or it can convert to false), should return a string "false", if not, return a string "true".
+ */
+function trueOrFalse(val){
+  if (val === false)    return "false";             
+  else{ 
+    return "true";
+  }
+}
