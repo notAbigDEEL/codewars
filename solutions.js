@@ -2208,3 +2208,158 @@ function trueOrFalse(val){
     return "true";
   }
 }
+
+/* Given an array of 4 integers
+[a,b,c,d] representing two points (a, b) and (c, d), return a string representation of the slope of the line joining these two points.
+
+For an undefined slope (division by 0), return undefined . Note that the "undefined" is case-sensitive.
+
+   a:x1
+   b:y1
+   c:x2
+   d:y2
+
+Assume that [a,b,c,d] and the answer are all integers (no floating numbers!). Slope: https://en.wikipedia.org/wiki/Slope
+
+ */
+
+function slope(points)
+{
+  let y = (points[3] - points[1])
+  let x = (points[2]-points[0])
+  let result = y/x
+  return isFinite(result) ? `${result}` : 'undefined'
+  
+}
+
+
+/* our task is to sum the differences between consecutive pairs in the array in descending order.
+
+For example:
+
+sumOfDifferences([2, 1, 10])
+
+Returns 9
+
+Descending order: [10, 2, 1]
+
+Sum: (10 - 2) + (2 - 1) = 8 + 1 = 9
+
+If the array is empty or the array has only one element the result should be 0 (Nothing in Haskell).
+ */
+
+function sumOfDifferences(arr) {
+  if (arr.length > 1) {
+    return Math.max(...arr) - Math.min(...arr)
+  }else{
+    return 0
+  } 
+}
+
+/* Recreation of Project Euler problem #6
+
+Find the difference between the sum of the squares of the first n natural numbers (1 <= n <= 100) and the square of their sum.
+Example
+
+For example, when n = 10:
+
+    The square of the sum of the numbers is:
+
+    (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10)2 = 552 = 3025
+
+    The sum of the squares of the numbers is:
+
+12 + 22 + 32 + 42 + 52 + 62 + 72 + 82 + 92 + 102 = 385
+
+Hence the difference between square of the sum of the first ten natural numbers and the sum of the squares of those numbes is: 3025 - 385 = 2640
+
+ */
+
+function differenceOfSquares(n){
+  const sumOfSquares = (n * (n + 1) * (2 * n + 1)) / 6
+  const sumOfNumbers = (n * (n + 1)) / 2;
+
+  const squareOfSumOfNumbers = sumOfNumbers * sumOfNumbers
+  const difference = Math.abs(sumOfSquares-squareOfSumOfNumbers)
+
+  return difference
+}
+
+
+/* You have to write a function that describe Leo:
+
+def leo(oscar):
+  pass
+
+if oscar was (integer) 88, you have to return "Leo finally won the oscar! Leo is happy".
+if oscar was 86, you have to return "Not even for Wolf of wallstreet?!"
+if it was not 88 or 86 (and below 88) you should return "When will you give Leo an Oscar?"
+if it was over 88 you should return "Leo got one already!"
+
+ */
+
+function leo(oscar){
+  if(oscar > 88){
+    return "Leo got one already!"
+  }
+  else if(oscar === 88){
+    return "Leo finally won the oscar! Leo is happy"
+  }
+  else if (oscar === 86){
+    return "Not even for Wolf of wallstreet?!"
+  }
+  else{
+    return "When will you give Leo an Oscar?"
+  }
+}
+
+
+/*Write function parseF which takes an input and returns a number or null if conversion is not possible. The input can be one of many different types so be aware.
+ */
+
+function parseF(s) {
+  if (Number.isNaN(parseFloat(s))){
+      return null
+      }
+  else{
+    return parseFloat(s)
+  }
+
+}
+
+/*Combine strings function
+
+Create a function named combineNames that accepts two parameters (first and last name). The function should return the full name.
+
+Example:
+
+combineNames('James', 'Stevens')
+
+returns:
+
+'James Stevens'
+
+ */
+
+function combineNames(str1, str2){
+  return `${str1} ${str2}`
+}
+
+
+/* Task:
+
+Write function typeValidation that will accept two parameters: variable and type and check if type of variable is matching type. Return true if types match or false if not.
+Examples:
+
+typeValidation(42, "number");   // => true
+typeValidation("42", "number"); // => false
+
+ */
+
+function typeValidation(variable, type) {
+  if(typeof variable === type){
+    return true
+  }
+  else return false
+}
+
