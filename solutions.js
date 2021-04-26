@@ -2363,3 +2363,51 @@ function typeValidation(variable, type) {
   else return false
 }
 
+/*Create a method that accepts a list and an item, and returns true if the item belongs to the list, otherwise false.
+ */
+
+function include(arr, item){
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] === item){
+      return true
+    }
+  }
+  return false
+}
+
+/* You're writing code to control your town's traffic lights. You need a function to handle each change from green, to yellow, to red, and then to green again.
+
+Complete the function that takes a string as an argument representing the current state of the light and returns a string representing the state the light should change to.
+
+For example, update_light('green') should return 'yellow'.
+ */
+
+function updateLight(current) {
+  if (current === "green"){
+     return "yellow"
+  }
+  else if (current === "yellow"){
+    return "red"
+  }else{
+    return "green"
+  }
+
+}
+
+
+/* Here we have a function that help us spam our hearty laughter. But is not working! I need you to find out why...
+
+Expected results:
+
+spam(1);  // hue
+spam(6);  // huehuehuehuehuehue
+spam(14); // huehuehuehuehuehuehuehuehuehuehuehuehuehue
+ */
+function spam(number){
+  let str = ''
+  for(let i = 0; i <number; i++){
+    str += 'hue'
+  }
+  return str
+}
+
