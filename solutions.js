@@ -2452,3 +2452,77 @@ const arr = N => {
   return result
 }
 }
+
+
+/* Who remembers back to their time in the schoolyard, when girls would take a flower and tear its petals, saying each of the following phrases each time a petal was torn:
+
+    I love you
+    a little
+    a lot
+    passionately
+    madly
+    not at all
+
+When the last petal was torn there were cries of excitement, dreams, surging thoughts and emotions.
+
+Your goal in this kata is to determine which phrase the girls would say for a flower of a given number of petals, where nb_petals > 0.
+
+ */
+
+function howMuchILoveYou(nbPetals) {
+  if(nbPetals % 6  === 1){
+    return 'I love you'
+  }
+  else if (nbPetals % 6 === 2){
+    return 'a little'
+  }
+  else if (nbPetals % 6 === 3){
+    return 'a lot'
+  }
+  else if (nbPetals % 6 === 4){
+    return 'passionately'
+  }
+  else if (nbPetals % 6 === 5){
+    return 'madly'
+  }
+  else{
+    return 'not at all'
+  }
+
+}
+
+/* Given an array (arr) as an argument complete the function countSmileys that should return the total number of smiling faces.
+
+Rules for a smiling face:
+
+    Each smiley face must contain a valid pair of eyes. Eyes can be marked as : or ;
+    A smiley face can have a nose but it does not have to. Valid characters for a nose are - or ~
+    Every smiling face must have a smiling mouth that should be marked with either ) or D
+
+No additional characters are allowed except for those mentioned.
+
+Valid smiley face examples: :) :D ;-D :~)
+Invalid smiley faces: ;( :> :} :]
+Example
+
+countSmileys([':)', ';(', ';}', ':-D']);       // should return 2;
+countSmileys([';D', ':-(', ':-)', ';~)']);     // should return 3;
+countSmileys([';]', ':[', ';*', ':$', ';-D']); // should return 1;
+
+Note
+
+In case of an empty array return 0. You will not be tested with invalid input (input will always be an array). Order of the face (eyes, nose, mouth) elements will always be the same.
+
+ */
+
+function countSmileys(arr) {
+  const validSmileys = {
+      ":)": true, ";)": true, ":D": true,
+      ";D": true, ":-D": true, ":~D": true,
+      ":-)": true, ":~)": true, ";~D": true,
+      ";~)": true, ";-D": true, ";-)": true
+    };
+    return arr.filter(chars => validSmileys[chars]).length
+  }
+
+  
