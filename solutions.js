@@ -2411,3 +2411,44 @@ function spam(number){
   return str
 }
 
+/*Create a class Ball. Ball objects should accept one argument for "ball type" when instantiated.
+
+If no arguments are given, ball objects should instantiate with a "ball type" of "regular."
+
+ball1 = new Ball();
+ball2 = new Ball("super");
+
+ball1.ballType     //=> "regular"
+ball2.ballType     //=> "super"
+
+ */
+
+class Ball{
+  constructor(ballType='regular'){
+  this.ballType = ballType
+  }
+}
+
+
+
+/* We want an array, but not just any old array, an array with contents!
+
+Write a function that produces an array with the numbers 0 to N-1 in it.
+
+For example, the following code will result in an array containing the numbers 0 to 4:
+
+arr(5) // => [0,1,2,3,4]
+
+Note: The parameter is optional. So you have to give it a default value.
+
+ */
+const arr = N => {
+  let result = []
+  if (!N){
+    return []
+  }
+  else{
+    result = [...Array(N).keys()]
+  return result
+}
+}
