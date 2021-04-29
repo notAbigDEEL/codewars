@@ -2525,4 +2525,10 @@ function countSmileys(arr) {
     return arr.filter(chars => validSmileys[chars]).length
   }
 
+
+
+  function removeEveryOther(arr){
+    return arr.filter((_,i)=> i%2 === 0)
+  }
+  
   
