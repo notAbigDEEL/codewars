@@ -2532,4 +2532,38 @@ function countSmileys(arr) {
   }
   
   
+
+  /* Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
+
+moveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0]
+
+   */
+
+  var moveZeros = function (arr) {
+    let zero = []
+    let nonzero = []
+    let result = []
+    
+    for (let i = 0; i < arr.length; i++){
+      if(arr[i] === 0){
+        zero.push(arr[i])
+      }
+      else{
+        nonzero.push(arr[i])
+      }
+    }
+    result = nonzero.concat(zero)
+    return result
+  }
+
   
+/* Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
+
+Return your answer as a number.
+
+ */
+  function sumMix(x){
+    return x.map(a => parseInt(a)).reduce((a,b) => a+b)
+   }
+
+   
