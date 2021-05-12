@@ -2568,5 +2568,3 @@ Return your answer as a number.
   function sumMix(x){
     return x.map(a => parseInt(a)).reduce((a,b) => a+b)
    }
-
-   
