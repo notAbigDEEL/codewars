@@ -2629,3 +2629,133 @@ You can assume all values in the array are numbers.
   function smallEnough(a, limit){
     return a.every((x)=> x<=limit)
   }
+
+
+  /* Write a function that takes an array of strings as an argument and returns a sorted array containing the same strings, ordered from shortest to longest.
+
+For example, if this array were passed as an argument:
+
+["Telescopes", "Glasses", "Eyes", "Monocles"]
+
+Your function would return the following array:
+
+["Eyes", "Glasses", "Monocles", "Telescopes"]
+
+All of the strings in the array passed to your function will be different lengths, so you will not have to decide how to order multiple strings of the same length.
+
+   */
+
+  function sortByLength (array) {
+    // Return an array containing the same strings, ordered from shortest to longest
+    return array.sort((a,b)=>a.length - b.length)
+  };
+
+
+/* Your car is old, it breaks easily. The shock absorbers are gone and you think it can handle about 15 more bumps before it dies totally.
+
+Unfortunately for you, your drive is very bumpy! Given a string showing either flat road ("_") or bumps ("n"), work out if you make it home safely. 15 bumps or under, return "Woohoo!", over 15 bumps return "Car Dead".
+
+ */
+
+  function bump(x){
+    if(x.length > 15){
+      return 'Car Dead'
+    }
+     else{
+       return 'Woohoo!'
+     }
+   }
+
+/*  Complete the function that takes a sequence of numbers as single parameter. Your function must return the sum of the even values of this sequence.
+
+Only numbers without decimals like 4 or 4.0 can be even.
+
+The input is a sequence of numbers: integers and/or floats.
+Examples
+
+[4, 3, 1, 2, 5, 10, 6, 7, 9, 8]  -->  30   # because 4 + 2 + 10 + 6 + 8 = 30
+[]                               -->  0
+
+
+ */
+
+   function sumEvenNumbers(input) {
+    let result = input.filter((x)=> x%2 === 0)
+    
+    return result.reduce((a,b)=>a+b)
+   }
+   
+   /* You will be given an array of objects (associative arrays in PHP) representing data about developers who have signed up to attend the next coding meetup that you are organising.
+
+Your task is to return:
+
+    true if at least one Ruby developer has signed up; or
+    false if there will be no Ruby developers.
+
+For example, given the following input array:
+
+var list1 = [
+  { firstName: 'Emma', lastName: 'Z.', country: 'Netherlands', continent: 'Europe', age: 29, language: 'Ruby' },
+  { firstName: 'Piotr', lastName: 'B.', country: 'Poland', continent: 'Europe', age: 128, language: 'Javascript' },
+  { firstName: 'Jayden', lastName: 'P.', country: 'Jamaica', continent: 'Americas', age: 42, language: 'JavaScript' }
+];
+
+your function should return true.
+    */
+
+   function isRubyComing(list) {
+    return list.some(v=>v.language==='Ruby')
+  }
+
+
+  /*Paul is an excellent coder and sits high on the CW leaderboard. He solves kata like a banshee but would also like to lead a normal life, with other activities. But he just can't stop solving all the kata!!
+
+Given an array (x) you need to calculate the Paul Misery Score. The values are worth the following points:
+
+kata = 5
+Petes kata = 10
+life = 0
+eating = 1
+
+The Misery Score is the total points gained from the array. Once you have the total, return as follows:
+
+< 40 = 'Super happy!'
+< 70 >= 40 = 'Happy!'
+< 100 >= 70 = 'Sad!'
+> 100 = 'Miserable!'
+
+
+   */
+
+  function paul(x){
+
+    let count=0
+    for(let i = 0; i < x.length; i++){
+      if(x[i] === 'kata'){
+        count+=5
+      }
+      else if (x[i] === 'Petes kata'){
+        count+=10
+      }
+      else if (x[i] === 'life'){
+        count+=0
+      }
+      else if (x[i]=== 'eating'){
+        count+=1
+      }
+    }
+    
+    if (count < 40){
+      return 'Super happy!'
+    }
+    else if (count >=40 && count < 70){
+      return 'Happy!'
+    }
+    else if (count >= 70 && count <100){
+      return 'Sad!'
+    }
+    else return 'Miserable!'
+  }
+
+
+  
