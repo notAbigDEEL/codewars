@@ -2619,3 +2619,13 @@ Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Fun
   var ArrowFunc = function(arr) {
     return arr.map( x => String.fromCharCode(x) ).join(''); //Complete this function
   }
+
+  /* You will be given an array and a limit value. You must check that all values in the array are below or equal to the limit value. If they are, return true. Else, return false.
+
+You can assume all values in the array are numbers.
+
+   */
+
+  function smallEnough(a, limit){
+    return a.every((x)=> x<=limit)
+  }
