@@ -2600,3 +2600,72 @@ function arrayMadness(a, b) {
     return false;
   }
 }
+
+/*
+Write a function that rearranges an integer into its largest possible value.
+
+Example (Input --> Output)
+
+123456 --> 654321
+105 --> 510
+12 --> 21
+If the argument passed through is single digit or is already the maximum possible integer, your function should simply return it.
+*/
+
+function superSize(num) {
+  return Number(
+    String(num)
+      .split("")
+      .sort((a, b) => b - a)
+      .join("")
+  );
+}
+
+/* What if we need the length of the words separated by a space to be added at the end of that same word and have it returned as an array?
+
+addLength('apple ban') => ["apple 5", "ban 3"]
+addLength('you will win') => ["you 3", "will 4", "win 3"]
+Your task is to write a function that takes a String and returns an Array/list with the length of each word added to each element .
+
+Note: String will have at least one element; words will always be separated by a space.
+
+*/
+
+function addLength(str) {
+  return str.split(" ").map((x) => `${x} ${x.length}`);
+}
+
+/*Be Concise III - Sum Squares
+You are given a program sumSquares that takes an array as input and returns the sum of the squares of each item in an array. For example:
+
+sumSquares([1,2,3,4,5]) === 55 // 1 ** 2 + 2 ** 2 + 3 ** 2 + 4 ** 2 + 5 ** 2
+sumSquares([7,3,9,6,5]) === 200
+sumSquares([11,13,15,18,2]) === 843
+Shorten the code such that it meets the requirements.
+
+A few hints:
+
+Try researching about built-in Array methods; they may help shorten your code a lot
+Good luck!
+ */
+
+function sumSquares(array) {
+  return array.map((x, y) => x ** 2).reduce((acumm, iter) => acumm + iter);
+}
+
+/*It is easy to join two strings together like this string1 + string2.
+
+Another way to get the desired result would be with string1.concat(string2)
+
+
+ES6 has introduced another way of joining strings. Your task is to find out what this is and write a function that will add two strings together, there must be a space between the two strings.
+
++ , .concat() & .join() will not be allowed in this exercise. I have also removed some other methods that can be used to cheat!
+
+If one of the arguments is a number your code must coerce it into being a string.
+
+ */
+
+function joinStrings(string1, string2) {
+  return `${string1} ${string2}`;
+}
