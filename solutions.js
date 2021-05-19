@@ -2568,6 +2568,7 @@ function double(array) {
 }
 
 /* Your task is to write function factorial.
+
  */
 
 function factorial(n) {
@@ -2654,7 +2655,6 @@ function sumSquares(array) {
 }
 
 /*It is easy to join two strings together like this string1 + string2.
-
 
 Another way to get the desired result would be with string1.concat(string2)
 
