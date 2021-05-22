@@ -2795,3 +2795,165 @@ function broken(x) {
     .map((x) => (x === "0" ? "1" : "0"))
     .join("");
 }
+
+/* Write a function that can return the smallest value of an array or the index of that value. The function's 2nd parameter will tell whether it should return the value or the index.
+
+Assume the first parameter will always be an array filled with at least 1 number and no duplicates. Assume the second parameter will be a string holding one of two values: 'value' and 'index'.
+
+min([1,2,3,4,5], 'value') // => 1
+min([1,2,3,4,5], 'index') // => 0
+
+ */
+
+function min(arr, toReturn) {
+  if (toReturn === "value") {
+    return Math.min(...arr);
+  } else {
+    return arr.indexOf(Math.min(...arr));
+  }
+}
+
+/*Given 2 strings, a and b, return a string of the form: shorter+reverse(longer)+shorter.
+
+In other words, the shortest string has to be put as prefix and as suffix of the reverse of the longest.
+
+Strings a and b may be empty, but not null (In C# strings may also be null. Treat them as if they are empty.).
+If a and b have the same length treat a as the longer producing b+reverse(a)+b
+
+ * 
+*/
+
+function shorter_reverse_longer(a, b) {
+  if (a.length > b.length) {
+    return b + a.split("").reverse().join("") + b;
+  } else if (a.length < b.length) {
+    return a + b.split("").reverse().join("") + a;
+  }
+
+  return b + a.split("").reverse().join("") + b;
+}
+
+/*An AI has infected a text with a character!!
+
+This text is now fully mutated to this character.
+
+If the text or the character are empty, return an empty string.
+There will never be a case when both are empty as nothing is going on!!
+
+Note: The character is a string of length 1 or an empty string.
+Example
+
+text before = "abc"
+character   = "z"
+text after  = "zzz"
+
+
+ */
+
+function contamination(text, char) {
+  return char.repeat(text.length);
+}
+
+/* Let's imagine we have a popular online RPG. A player begins with a score of 0 in class E5. A1 is the highest level a player can achieve.
+
+Now let's say the players wants to rank up to class E4. To do so the player needs to achieve at least 100 points to enter the qualifying stage.
+
+Write a script that will check to see if the player has achieved at least 100 points in his class. If so, he enters the qualifying stage.
+
+In that case, we return, "Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up.".
+
+Otherwise return, False/false (according to the language n use).s
+ */
+
+function playerRankUp(points) {
+  if (points >= 100) {
+    return "Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up.";
+  } else return false;
+}
+
+/* Given a sequence of integers, return the sum of all the integers that have an even index, multiplied by the integer at the last index.
+
+Indices in sequence start from 0.
+
+If the sequence is empty, you should return 0.
+
+ */
+
+function evenLast(numbers) {
+  let evens = [];
+  let sum = 0;
+
+  if (numbers.length === 0) {
+    return 0;
+  }
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (i % 2 === 0) {
+      evens.push(numbers[i]);
+    }
+  }
+
+  sum = evens.reduce((a, b) => a + b);
+  return sum * numbers[numbers.length - 1];
+}
+
+/*Task
+
+Coding in function bigToSmall. function accept 1 parameter arr(2D number array).
+
+Your task is: First to all, refer to the example above, flat output arr to a one-dimensional array.
+
+And then sort array in descending order.
+
+Finally, use the separator ">" to connect the elements into a string.
+
+Don't complain about the situation like 1>1 is not reasonable, it is just a separator.
+
+Some example:
+
+bigToSmall([[1,2],[3,4],[5,6]]) should return "6>5>4>3>2>1"
+bigToSmall([[1,3,5],[2,4,6]]) should return "6>5>4>3>2>1"
+bigToSmall([[1,1],[1],[1,1]]) should return "1>1>1>1>1"
+
+ */
+
+function bigToSmall(arr) {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    result = result.concat(arr[i]);
+  }
+  return result.sort((a, b) => b - a).join(">");
+}
+
+/* Coding in function blackAndWhite. function accept 1 parameter arr(a number array).
+
+If arr is not an array, function should return:
+
+"It's a fake array"
+
+If arr contains elements 5 and 13, function should return:
+
+"It's a black array"
+
+If arr contains neither 5 nor 13, function should return:
+
+"It's a white array"
+
+Examples
+
+blackAndWhite(5,13) should return "It's a fake array"
+blackAndWhite([5,13]) should return "It's a black array"
+blackAndWhite([5,12]) should return "It's a white array" 
+
+ */
+
+function blackAndWhite(arr) {
+  if (Array.isArray(arr) === false) {
+    return `It's a fake array`;
+  }
+  if (arr.indexOf(5) !== -1 && arr.indexOf(13) !== -1) {
+    return `It's a black array`;
+  } else {
+    return `It's a white array`;
+  }
+}
