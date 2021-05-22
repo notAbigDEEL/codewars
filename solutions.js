@@ -2740,3 +2740,58 @@ function excludingVatPrice(price) {
     return Number(num.toFixed(2));
   }
 }
+
+/* The purpose of this kata is to work out just how many bottles of duty free whiskey you would have to buy such that the saving over the normal high street price would effectively cover the cost of your holiday.
+
+You will be given the high street price (normPrice), the duty free discount (discount) and the cost of the holiday.
+
+For example, if a bottle cost £10 normally and the discount in duty free was 10%, you would save £1 per bottle. If your holiday cost £500, the answer you should return would be 500.
+
+All inputs will be integers. Please return an integer. Round down.
+
+ */
+
+function dutyFree(normPrice, discount, hol) {
+  return Math.floor((hol / normPrice / discount) * 100);
+}
+
+/* Your coworker was supposed to write a simple helper function to capitalize a string (that contains a single word) before they went on vacation.
+
+Unfortunately, they have now left and the code they gave you doesn't work. Fix the helper function they wrote so that it works as intended (i.e. make the first character in the string "word" upper case).
+
+Don't worry about numbers, special characters, or non-string types being passed to the function. The string lengths will be from 1 character up to 10 characters, but will never be empty.
+
+ */
+function capitalizeWord(word) {
+  return word[0].toUpperCase() + word.slice(1);
+}
+
+/*Write a function that appends the items from sequence 2 onto sequence 1, returning the newly formed sequence. Your function should also be able to handle nested sequences.
+
+All inputs will be arrays/nested arrays.
+
+For example:
+
+['a','b','c'], [1,2,3]     --> ['a','b','c',1,2,3]
+[['x','x'],'B'], ['c','D'] --> [['x','x'],'B','c','D']
+
+
+ */
+
+function appendArrays(arr1, arr2) {
+  return arr1.concat(arr2);
+}
+
+/*  The bloody photocopier is broken... Just as you were sneaking around the office to print off your favourite binary code!
+
+Instead of copying the original, it reverses it: '1' becomes '0' and vice versa.
+
+Given a string of binary, return the version the photocopier gives you as a string.
+ */
+
+function broken(x) {
+  return x
+    .split("")
+    .map((x) => (x === "0" ? "1" : "0"))
+    .join("");
+}
