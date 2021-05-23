@@ -2957,3 +2957,146 @@ function blackAndWhite(arr) {
     return `It's a white array`;
   }
 }
+
+/* Coding in function maxMin. function accept 2 parameter arr1 and arr2. They are two number array and have the same number of elements.
+
+First, calculate the difference of the same index of the arr1 and arr2. Like this:
+
+[1,3,5]
+ | | |   --->  8, 5, 2
+[9,8,7]
+
+Please note that the difference is positive. Such as the above 1 and 9, the difference should be 8, not -8. I think abs() can help you get the correct result ;-)
+
+Then find the maximum and minimum values of them, and return the results in the form of an array. Like this:
+
+  maxvalue , minvalue
+[    8     ,    2     ]
+
+ */
+
+function maxMin(arr1, arr2) {
+  let result = [];
+  for (let i = 0; i < arr1.length; i++) {
+    result.push(Math.abs(arr1[i] - arr2[i]));
+  }
+  let max = Math.max(...result);
+  let min = Math.min(...result);
+  let resultArr = [];
+  resultArr[0] = max;
+  resultArr[1] = min;
+
+  return resultArr;
+}
+
+/* You can print your name on a billboard ad. Find out how much it will cost you. Each letter has a default price of £30, but that can be different if you are given 2 parameters instead of 1.
+
+You can not use multiplier "*" operator.
+
+If your name would be Jeong-Ho Aristotelis, ad would cost £600. 20 leters * 30 = 600 (Space counts as a letter).
+
+ */
+
+function billboard(name, price = 30) {
+  let result = 0;
+  for (let i = 0; i < name.length; i++) {
+    result += price;
+  }
+  return result;
+}
+
+/* Coding in function firstToLast, function accept 2 parameters:str and c. str is a string. c is a char.
+
+Please return the gap between the first position of c and the last position of c.
+
+If there are a lot of c in the str, should return a positive integer; If there is only one c in str, should return 0; If there is no c in the str, should return -1. Retrieval should not ignored the case.
+
+for example:
+
+firstToLast("ababc","a") should return 2(2-0)
+firstToLast("ababc","c") should return 0(4-4)
+firstToLast("ababc","d") should return -1
+
+ */
+
+function firstToLast(str, c) {
+  if (str.indexOf(c) === -1) {
+    return -1;
+  } else {
+    return str.lastIndexOf(c) - str.indexOf(c);
+  }
+}
+
+/*Coding in function fiveLine, function accept 1 parameter:s. s is a string.
+
+Please return a string of 5 lines(newline symbol is \n). The first line has one s; Second line have two s; and so on..Fifth line have five s;
+
+Note1: The two sides of the parameter s may contain some whitespace, please clear them before using s.
+
+Note2: Using a string template can make your job easier.
+
+Example:
+
+fiveLine("  a") should return "a\naa\naaa\naaaa\naaaaa"
+a
+aa
+aaa
+aaaa
+aaaaa       <---The effect when you console.log it
+fiveLine("  xy ") 
+should return "xy\nxyxy\nxyxyxy\nxyxyxyxy\nxyxyxyxyxy"
+xy
+xyxy
+xyxyxy
+xyxyxyxy
+xyxyxyxyxy  <---The effect when you console.log it
+
+ */
+
+function fiveLine(s) {
+  s = s.trim();
+  return `${s}\n${s}${s}\n${s}${s}${s}\n${s}${s}${s}${s}\n${s}${s}${s}${s}${s}`;
+}
+
+/* Complete function saleHotdogs/SaleHotDogs/sale_hotdogs, function accept 1 parameters:n, n is the number of customers to buy hotdogs, different numbers have different prices (refer to the following table), return a number that the customer need to pay how much money.
+
++---------------+-------------+
+|  numbers n    | price(cents)|
++---------------+-------------+
+|n<5            |    100      |
++---------------+-------------+
+|n>=5 and n<10  |     95      |
++---------------+-------------+
+|n>=10          |     90      |
++---------------+-------------+
+
+You can use if..else or ternary operator to complete it.
+ */
+
+function saleHotdogs(n) {
+  if (n < 5) {
+    return 100 * n;
+  } else if (n >= 5 && n < 10) {
+    return 95 * n;
+  } else return 90 * n;
+}
+
+/* Given a two-dimensional array of integers, return the flattened version of the array with all the integers in the sorted (ascending) order.
+
+Example:
+
+Given [[3, 2, 1], [4, 6, 5], [], [9, 7, 8]], your function should return [1, 2, 3, 4, 5, 6, 7, 8, 9].
+
+ */
+
+("use strict");
+
+function flattenAndSort(array) {
+  let flattened = [].concat(...array);
+
+  return flattened.sort((a, b) => a - b);
+}
+
+/*
+ */
+
