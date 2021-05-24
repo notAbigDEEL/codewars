@@ -3123,3 +3123,101 @@ function bmi(weight, height) {
   }
 }
 
+/* Americans are odd people: in their buildings, the first floor is actually the ground floor and there is no 13th floor (due to superstition).
+
+Write a function that given a floor in the american system returns the floor in the european system.
+
+With the 1st floor being replaced by the ground floor and the 13th floor being removed, the numbers move down to take their place. In case of above 13, they move down by two because there are two omitted numbers below them.
+
+Basements (negatives) stay the same as the universal level.
+
+More information here
+Examples
+
+1  =>  0 
+0  =>  0
+5  =>  4
+15  =>  13
+-3  =>  -3
+
+ */
+
+function getRealFloor(n) {
+  if (n < 0) {
+    return n;
+  } else if (n <= 2) {
+    return 0;
+  } else if (n <= 12) {
+    return n - 1;
+  } else {
+    return n - 2;
+  }
+}
+
+/* Return a new array consisting of elements which are multiple of their own index in input array (length > 1).
+
+Some cases:
+
+[22, -6, 32, 82, 9, 25] =>  [-6, 32, 25]
+
+[68, -1, 1, -7, 10, 10] => [-1, 10]
+
+[-56,-85,72,-26,-14,76,-27,72,35,-21,-67,87,0,21,59,27,-92,68] => [-85, 72, 0, 68]
+
+
+ */
+
+function multipleOfIndex(array) {
+  let result = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % i === 0) {
+      result.push(array[i]);
+    }
+  }
+  return result;
+}
+
+/* Just a simple sorting usage. Create a function that returns the elements of the input-array / list in a sorted manner.
+
+ */
+
+sortme = function (names) {
+  return names.sort();
+};
+
+/* Write a function to get the first elements of asequence. Passing a parameter n (default=1) will return the first n elements of the sequence.
+
+If n == 0 return an empty sequence []
+Examples
+
+var arr = ['a', 'b', 'c', 'd', 'e'];
+first(arr) //=> ['a'];
+first(arr, 2) //=> ['a', 'b']
+first(arr, 3) //=> ['a', 'b', 'c'];
+first(arr, 0) //=> [];
+
+ */
+
+function first(arr, n = 1) {
+  const result = [];
+
+  if (n > arr.length) {
+    n = arr.length;
+  }
+  for (let i = 0; i < n; i++) {
+    result.push(arr[i]);
+  }
+  return result;
+}
+
+/* *** No Loops Allowed ***
+
+You will be given an array (a) and a value (x). All you need to do is check whether the provided array contains the value, without using a loop.
+
+Array can contain numbers or strings. X can be either. Return true if the array contains the value, false if not. With strings you will need to account for case.
+
+ */
+
+function check(a, x) {
+  return a.includes(x);
+}
