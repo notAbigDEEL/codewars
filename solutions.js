@@ -3255,3 +3255,27 @@ For example:
 function goals(laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
   return laLigaGoals + copaDelReyGoals + championsLeagueGoals;
 }
+
+/* It's a well known fact that anything Chuck Norris wants, he gets. As a result Chuck very rarely has to use the word false.
+
+It is a less well known fact that if something is true, and Chuck doesn't want it to be, Chuck can scare the truth with his massive biceps, and it automatically becomes false.
+
+Your task is to be more like Chuck (ha! good luck!). You must return false without ever actually using the word false...
+
+Go show some truth who's boss!
+ */
+
+function ifChuckSaysSo() {
+  return 3 > 4;
+}
+
+/* Write a function that always returns 5
+
+Sounds easy right? Just bear in mind that you can't use any of the following characters: 0123456789*+-/
+ */
+
+function unusualFive() {
+  let five = "fiver"
+  return five.length
+}
+
