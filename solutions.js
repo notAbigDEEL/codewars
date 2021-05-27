@@ -3275,7 +3275,6 @@ Sounds easy right? Just bear in mind that you can't use any of the following cha
  */
 
 function unusualFive() {
-  let five = "fiver"
-  return five.length
+  let five = "fiver";
+  return five.length;
 }
-
