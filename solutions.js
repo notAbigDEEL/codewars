@@ -3348,3 +3348,33 @@ function calculateYears(principal, interest, tax, desired) {
   }
   return numYears;
 }
+
+/*Task
+Given an array of integers, remove the smallest value. Do not mutate the original array/list. If there are multiple elements with the same value, remove the one with a lower index. If you get an empty array/list, return an empty array/list.
+
+Don't change the order of the elements that are left.
+
+Examples
+removeSmallest([1,2,3,4,5]) = [2,3,4,5]
+removeSmallest([5,3,2,1,4]) = [5,3,2,4]
+removeSmallest([2,2,1,2,1]) = [2,2,2,1]
+ */
+function removeSmallest(numbers) {
+  if (numbers.length <= 1) {
+    return [];
+  }
+
+  let indexOfSmallest = numbers.indexOf(Math.min(...numbers));
+
+  return [
+    ...numbers.slice(0, indexOfSmallest),
+    ...numbers.slice(indexOfSmallest + 1),
+  ];
+}
+
+/* Implement a function that returns the minimal and the maximal value of a list (in this order).
+ */
+
+function getMinMax(arr) {
+  return [Math.min(...arr), Math.max(...arr)];
+}
