@@ -3414,14 +3414,72 @@ mergeArrays(arr5, arr6);  // [1, 2, 3, 4, 5, 7, 9, 10, 11, 12]
 */
 
 function mergeArrays(arr1, arr2) {
-  let result = []
-  
-  if(arr1.length === 0 && arr2.length === 0){
-    return []
+  let result = [];
+
+  if (arr1.length === 0 && arr2.length === 0) {
+    return [];
+  } else {
+    result = arr1.concat(arr2).sort((a, b) => a - b);
+    result = [...new Set(result)];
   }
-  else{
-  result = arr1.concat(arr2).sort((a,b)=>a-b)
-  result = [...new Set(result)]
+  return result;
+}
+
+/* A western man is trying to find gold in a river. To do that, he passes a bucket through the river's soil and then checks if it contains any gold. However, he could be more productive if he wrote an algorithm to do the job for him.
+
+So, you need to check if there is gold in the bucket, and if so, return True/true. If not, return False/false.
+
+ */
+
+function checkTheBucket(bucket) {
+  if (bucket.indexOf("gold") !== -1) {
+    return true;
+  } else {
+    return false;
   }
-  return result
+}
+
+/* Define a function that removes duplicates from an array of numbers and returns it as a result.
+
+The order of the sequence has to stay the same.
+
+ */
+
+function distinct(a) {
+  return [...new Set(a)];
+}
+
+/* 
+Complete the function that receives as input a string, and produces outputs according to the following table:
+Input 	Output
+"Jabroni" 	"Patron Tequila"
+"School Counselor" 	"Anything with Alcohol"
+"Programmer" 	"Hipster Craft Beer"
+"Bike Gang Member" 	"Moonshine"
+"Politician" 	"Your tax dollars"
+"Rapper" 	"Cristal"
+anything else 	"Beer"
+
+Note: anything else is the default case: if the input to the function is not any of the values in the table, then the return value should be "Beer".
+
+Make sure you cover the cases where certain words do not show up with correct capitalization. For example, the input "pOLitiCIaN" should still return "Your tax dollars".
+
+ */
+
+function getDrinkByProfession(param) {
+  if (param.toLowerCase() === "jabroni") {
+    return "Patron Tequila";
+  } else if (param.toLowerCase() === "school counselor") {
+    return "Anything with Alcohol";
+  } else if (param.toLowerCase() === "programmer") {
+    return "Hipster Craft Beer";
+  } else if (param.toLowerCase() === "bike gang member") {
+    return "Moonshine";
+  } else if (param.toLowerCase() === "politician") {
+    return "Your tax dollars";
+  } else if (param.toLowerCase() === "rapper") {
+    return "Cristal";
+  } else {
+    return "Beer";
+  }
 }
