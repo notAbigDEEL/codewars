@@ -3511,7 +3511,6 @@ sum() must return the sum of all array values
 even() must return an array of all even numbers
 odd() must return an array of all odd numbers
 Note: the original array must not be changed in any case!
-
 */
 
 Array.prototype.square = function () {
