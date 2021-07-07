@@ -3562,3 +3562,45 @@ function spinWords(string) {
   }
   return result.join(" ");
 }
+
+/*In this Kata, you will remove the left-most duplicates from a list of integers and return the result.
+
+// Remove the 3's at indices 0 and 3
+// followed by removing a 4 at index 1
+solve([3, 4, 4, 3, 6, 3]); // => [4, 6, 3]
+
+More examples can be found in the test cases. 
+*/
+
+function solve(arr) {
+  let answer = [];
+
+  for (let i = arr.length - 1; i >= 0; i--) {
+    if (!answer.includes(arr[i])) {
+      answer.unshift(arr[i]);
+    }
+  }
+  return answer;
+}
+
+/*Jaden Smith, the son of Will Smith, is the star of films such as The Karate Kid (2010) and After Earth (2013). Jaden is also known for some of his philosophy that he delivers via Twitter. When writing on Twitter, he is known for almost always capitalizing every word. For simplicity, you'll have to capitalize each word, check out how contractions are expected to be in the example below.
+
+Your task is to convert strings to how they would be written by Jaden Smith. The strings are actual quotes from Jaden Smith, but they are not capitalized in the same way he originally typed them.
+
+Example:
+
+Not Jaden-Cased: "How can mirrors be real if our eyes aren't real"
+Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
+
+*/
+
+String.prototype.toJadenCase = function () {
+  //...
+  const returnString = [];
+  const words = this.toLowerCase().split(" ");
+
+  for (let i = 0; i < words.length; i++) {
+    returnString.push(words[i][0].toUpperCase() + words[i].slice(1));
+  }
+  return returnString.join(" ");
+};
