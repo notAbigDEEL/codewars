@@ -3618,7 +3618,6 @@ How many times do the elements in array2 appear in array1?
     'uap' does not appear in the first array (0)
 
 Therefore, solve(array1, array2) = [2, 1, 0]
-
 */
 
 function solve(a, b) {
