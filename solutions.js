@@ -3595,7 +3595,6 @@ Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
 */
 
 String.prototype.toJadenCase = function () {
-  //...
   const returnString = [];
   const words = this.toLowerCase().split(" ");
 
