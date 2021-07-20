@@ -3627,6 +3627,7 @@ function solve(a, b) {
 
 s = "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill";
 
+
 Could you make a program that
 
     makes this string uppercase
