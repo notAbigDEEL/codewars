@@ -3620,6 +3620,7 @@ Therefore, solve(array1, array2) = [2, 1, 0]
 */
 
 function solve(a, b) {
+
   return b.map((x) => a.filter((n) => n === x).length);
 }
 
