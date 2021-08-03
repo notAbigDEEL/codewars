@@ -3638,7 +3638,6 @@ So the result of function meeting(s) will be:
 "(CORWILL, ALFRED)(CORWILL, FRED)(CORWILL, RAPHAEL)(CORWILL, WILFRED)(TORNBULL, BARNEY)(TORNBULL, BETTY)(TORNBULL, BJON)"
 
 It can happen that in two distinct families with the same family name two people have the same first name too.
-
 */
 
 function meeting(s) {
