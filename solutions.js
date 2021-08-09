@@ -3570,7 +3570,6 @@ function spinWords(string) {
 solve([3, 4, 4, 3, 6, 3]); // => [4, 6, 3]
 
 More examples can be found in the test cases. 
-
 */
 
 function solve(arr) {
