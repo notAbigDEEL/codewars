@@ -3604,7 +3604,8 @@ String.prototype.toJadenCase = function () {
   return returnString.join(" ");
 };
 
-/*Given two arrays of strings, return the number of times each string of the second array appears in the first array.
+/*
+Given two arrays of strings, return the number of times each string of the second array appears in the first array.
 Example
 
 array1 = ['abc', 'abc', 'xyz', 'cde', 'uvw']
