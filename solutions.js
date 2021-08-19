@@ -3256,7 +3256,8 @@ function goals(laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
   return laLigaGoals + copaDelReyGoals + championsLeagueGoals;
 }
 
-/* It's a well known fact that anything Chuck Norris wants, he gets. As a result Chuck very rarely has to use the word false.
+/* 
+It's a well known fact that anything Chuck Norris wants, he gets. As a result Chuck very rarely has to use the word false.
 
 It is a less well known fact that if something is true, and Chuck doesn't want it to be, Chuck can scare the truth with his massive biceps, and it automatically becomes false.
 
