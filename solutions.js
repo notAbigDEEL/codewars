@@ -3235,7 +3235,8 @@ function _if(bool, func1, func2) {
   }
 }
 
-/* Messi goals function
+/* 
+Messi goals function
 
 Messi is a soccer player with goals in three leagues:
 
