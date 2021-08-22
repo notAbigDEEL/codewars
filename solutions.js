@@ -3177,7 +3177,8 @@ function multipleOfIndex(array) {
   return result;
 }
 
-/* Just a simple sorting usage. Create a function that returns the elements of the input-array / list in a sorted manner.
+/* 
+Just a simple sorting usage. Create a function that returns the elements of the input-array / list in a sorted manner.
 
  */
 
