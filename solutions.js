@@ -3185,7 +3185,8 @@ sortme = function (names) {
   return names.sort();
 };
 
-/* Write a function to get the first elements of asequence. Passing a parameter n (default=1) will return the first n elements of the sequence.
+/* 
+Write a function to get the first elements of asequence. Passing a parameter n (default=1) will return the first n elements of the sequence.
 
 If n == 0 return an empty sequence []
 Examples
@@ -3210,7 +3211,8 @@ function first(arr, n = 1) {
   return result;
 }
 
-/* *** No Loops Allowed ***
+/* 
+*** No Loops Allowed ***
 
 You will be given an array (a) and a value (x). All you need to do is check whether the provided array contains the value, without using a loop.
 
