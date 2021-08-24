@@ -3123,7 +3123,8 @@ function bmi(weight, height) {
   }
 }
 
-/* Americans are odd people: in their buildings, the first floor is actually the ground floor and there is no 13th floor (due to superstition).
+/* 
+Americans are odd people: in their buildings, the first floor is actually the ground floor and there is no 13th floor (due to superstition).
 
 Write a function that given a floor in the american system returns the floor in the european system.
 
