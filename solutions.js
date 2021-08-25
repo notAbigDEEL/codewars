@@ -3081,7 +3081,8 @@ function saleHotdogs(n) {
   } else return 90 * n;
 }
 
-/* Given a two-dimensional array of integers, return the flattened version of the array with all the integers in the sorted (ascending) order.
+/* 
+Given a two-dimensional array of integers, return the flattened version of the array with all the integers in the sorted (ascending) order.
 
 Example:
 
