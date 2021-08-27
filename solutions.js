@@ -3027,7 +3027,8 @@ function firstToLast(str, c) {
   }
 }
 
-/*Coding in function fiveLine, function accept 1 parameter:s. s is a string.
+/*
+Coding in function fiveLine, function accept 1 parameter:s. s is a string.
 
 Please return a string of 5 lines(newline symbol is \n). The first line has one s; Second line have two s; and so on..Fifth line have five s;
 
