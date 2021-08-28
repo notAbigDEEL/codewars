@@ -2989,7 +2989,8 @@ function maxMin(arr1, arr2) {
   return resultArr;
 }
 
-/* You can print your name on a billboard ad. Find out how much it will cost you. Each letter has a default price of £30, but that can be different if you are given 2 parameters instead of 1.
+/* 
+You can print your name on a billboard ad. Find out how much it will cost you. Each letter has a default price of £30, but that can be different if you are given 2 parameters instead of 1.
 
 You can not use multiplier "*" operator.
 
@@ -3005,7 +3006,8 @@ function billboard(name, price = 30) {
   return result;
 }
 
-/* Coding in function firstToLast, function accept 2 parameters:str and c. str is a string. c is a char.
+/* 
+Coding in function firstToLast, function accept 2 parameters:str and c. str is a string. c is a char.
 
 Please return the gap between the first position of c and the last position of c.
 
