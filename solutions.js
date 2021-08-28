@@ -2925,7 +2925,8 @@ function bigToSmall(arr) {
   return result.sort((a, b) => b - a).join(">");
 }
 
-/* Coding in function blackAndWhite. function accept 1 parameter arr(a number array).
+/*
+ Coding in function blackAndWhite. function accept 1 parameter arr(a number array).
 
 If arr is not an array, function should return:
 
