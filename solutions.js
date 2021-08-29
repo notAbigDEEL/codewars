@@ -2897,7 +2897,8 @@ function evenLast(numbers) {
   return sum * numbers[numbers.length - 1];
 }
 
-/*Task
+/*
+Task
 
 Coding in function bigToSmall. function accept 1 parameter arr(2D number array).
 
