@@ -2833,7 +2833,8 @@ function shorter_reverse_longer(a, b) {
   return b + a.split("").reverse().join("") + b;
 }
 
-/*An AI has infected a text with a character!!
+/*
+An AI has infected a text with a character!!
 
 This text is now fully mutated to this character.
 
