@@ -2766,7 +2766,8 @@ function capitalizeWord(word) {
   return word[0].toUpperCase() + word.slice(1);
 }
 
-/*Write a function that appends the items from sequence 2 onto sequence 1, returning the newly formed sequence. Your function should also be able to handle nested sequences.
+/*
+Write a function that appends the items from sequence 2 onto sequence 1, returning the newly formed sequence. Your function should also be able to handle nested sequences.
 
 All inputs will be arrays/nested arrays.
 
