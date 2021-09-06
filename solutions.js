@@ -2782,7 +2782,8 @@ function appendArrays(arr1, arr2) {
   return arr1.concat(arr2);
 }
 
-/*  The bloody photocopier is broken... Just as you were sneaking around the office to print off your favourite binary code!
+/*  
+The bloody photocopier is broken... Just as you were sneaking around the office to print off your favourite binary code!
 
 Instead of copying the original, it reverses it: '1' becomes '0' and vice versa.
 
