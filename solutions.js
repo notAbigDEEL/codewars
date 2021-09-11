@@ -2653,7 +2653,8 @@ function sumSquares(array) {
   return array.map((x, y) => x ** 2).reduce((acumm, iter) => acumm + iter);
 }
 
-/*It is easy to join two strings together like this string1 + string2.
+/*
+It is easy to join two strings together like this string1 + string2.
 
 Another way to get the desired result would be with string1.concat(string2)
 
