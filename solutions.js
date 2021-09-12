@@ -2635,7 +2635,8 @@ function addLength(str) {
   return str.split(" ").map((x) => `${x} ${x.length}`);
 }
 
-/*Be Concise III - Sum Squares
+/*
+Be Concise III - Sum Squares
 You are given a program sumSquares that takes an array as input and returns the sum of the squares of each item in an array. For example:
 
 sumSquares([1,2,3,4,5]) === 55 // 1 ** 2 + 2 ** 2 + 3 ** 2 + 4 ** 2 + 5 ** 2
