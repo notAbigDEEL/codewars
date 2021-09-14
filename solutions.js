@@ -3706,7 +3706,6 @@ For example: (Input1, Input2) --> output
 ("1", "22") --> "1221"
 ("22", "1") --> "1221"
 
-
  */
 
 function solution(a, b) {
