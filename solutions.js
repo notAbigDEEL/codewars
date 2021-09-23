@@ -3649,7 +3649,6 @@ String.prototype.toJadenCase = function () {
 };
 
 /*
-
 Given two arrays of strings, return the number of times each string of the second array appears in the first array.
 Example
 
